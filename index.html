@@ -36,49 +36,8 @@
 
 <main>
 
-  <!-- ===================== INÍCIO ===================== -->
-  <section id="inicio" class="inicio">
-    <div class="inicio__grade">
-      <div class="inicio__coluna-texto">
-        <p class="eyebrow">Acervo Digital de Materiais Didáticos</p>
-        <h1>Todo material de aula, catalogado e ao alcance de um clique.</h1>
-        <p class="inicio__lead">
-          O SAD centraliza PDFs, vídeos e slides enviados pelos professores e organiza
-          tudo por série e por disciplina — para que o acesso ao conteúdo pedagógico
-          continue simples mesmo com conectividade limitada.
-        </p>
-        <div class="inicio__acoes">
-          <a href="#login" class="botao botao--primario">Entrar</a>
-          <a href="#cadastro" class="botao botao--secundario">Criar cadastro</a>
-        </div>
-        <ul class="inicio__metricas">
-          <li><strong>12</strong><span>materiais no acervo</span></li>
-          <li><strong>3</strong><span>séries atendidas</span></li>
-          <li><strong>3</strong><span>disciplinas ativas</span></li>
-        </ul>
-      </div>
-
-      <div class="inicio__coluna-visual" aria-hidden="true">
-        <div class="ficha-catalografica">
-          <div class="ficha-catalografica__topo">
-            <span>FICHA Nº 0142</span>
-            <span class="ficha-catalografica__carimbo">DIGITAL</span>
-          </div>
-          <p class="ficha-catalografica__titulo">Introdução à Fotossíntese</p>
-          <dl class="ficha-catalografica__linhas">
-            <div><dt>Disciplina</dt><dd>Ciências</dd></div>
-            <div><dt>Série</dt><dd>7º ano</dd></div>
-            <div><dt>Tipo</dt><dd>PDF</dd></div>
-            <div><dt>Publicado</dt><dd>12/06/2026</dd></div>
-          </dl>
-          <div class="ficha-catalografica__rodape">acervo-digital · registro automático</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===================== LOGIN ===================== -->
-  <section id="login" class="painel-login">
+  <section id="login" class="tela login">
     <div class="cartao-formulario">
       <h2>Login</h2>
       <p class="cartao-formulario__descricao">Acesse com sua conta de professor ou aluno.</p>
@@ -102,7 +61,7 @@
   </section>
 
   <!-- ===================== CADASTRO ===================== -->
-  <section id="cadastro" class="cadastro-usuario">
+  <section id="cadastro" class="tela cadastro">
     <div class="cartao-formulario cartao-formulario--largo">
       <h2>Cadastro</h2>
       <p class="cartao-formulario__descricao">Crie sua conta para acessar o acervo.</p>
@@ -153,7 +112,7 @@
   </section>
 
   <!-- ===================== PAINEL DO PROFESSOR ===================== -->
-  <section id="painel-professor" class="painel-professor">
+  <section id="painel-professor" class="tela painel-professor">
     <div class="secao__cabecalho">
       <div>
         <p class="eyebrow">Área do Professor</p>
@@ -197,7 +156,7 @@
   </section>
 
   <!-- ===================== UPLOAD DE MATERIAL ===================== -->
-  <section id="upload-material" class="upload-material">
+  <section id="upload-material" class="tela upload-material">
     <div class="cartao-formulario cartao-formulario--largo">
       <h2>Upload de Material</h2>
       <p class="cartao-formulario__descricao">Preencha os dados do novo material didático.</p>
@@ -246,7 +205,7 @@
   </section>
 
   <!-- ===================== PAINEL DO ALUNO ===================== -->
-  <section id="painel-aluno" class="painel-aluno">
+  <section id="painel-aluno" class="tela painel-aluno">
     <div class="secao__cabecalho">
       <div>
         <p class="eyebrow">Área do Aluno</p>
@@ -289,7 +248,7 @@
   </section>
 
   <!-- ===================== MATERIAIS POR SÉRIE ===================== -->
-  <section id="materiais-por-serie" class="painel-series">
+  <section id="materiais-por-serie" class="tela painel-series">
     <p class="eyebrow">Organização do Acervo</p>
     <h2>Materiais por Série</h2>
 
@@ -349,7 +308,7 @@
   </section>
 
   <!-- ===================== MATERIAIS POR DISCIPLINA ===================== -->
-  <section id="materiais-por-disciplina" class="painel-disciplinas">
+  <section id="materiais-por-disciplina" class="tela painel-disciplinas">
     <p class="eyebrow">Organização do Acervo</p>
     <h2>Materiais por Disciplina</h2>
 
@@ -407,7 +366,46 @@
       </div>
     </div>
   </section>
+  <!-- ===================== INÍCIO ===================== -->
+  <section id="inicio" class=" tela inicio">
+    <div class="inicio__grade">
+      <div class="inicio__coluna-texto">
+        <p class="eyebrow">Acervo Digital de Materiais Didáticos</p>
+        <h1>Todo material de aula, catalogado e ao alcance de um clique.</h1>
+        <p class="inicio__lead">
+          O SAD centraliza PDFs, vídeos e slides enviados pelos professores e organiza
+          tudo por série e por disciplina — para que o acesso ao conteúdo pedagógico
+          continue simples mesmo com conectividade limitada.
+        </p>
+        <div class="inicio__acoes">
+          <a href="#login" class="botao botao--primario">Entrar</a>
+          <a href="#cadastro" class="botao botao--secundario">Criar cadastro</a>
+        </div>
+        <ul class="inicio__metricas">
+          <li><strong>12</strong><span>materiais no acervo</span></li>
+          <li><strong>3</strong><span>séries atendidas</span></li>
+          <li><strong>3</strong><span>disciplinas ativas</span></li>
+        </ul>
+      </div>
 
+      <div class="inicio__coluna-visual" aria-hidden="true">
+        <div class="ficha-catalografica">
+          <div class="ficha-catalografica__topo">
+            <span>FICHA Nº 0142</span>
+            <span class="ficha-catalografica__carimbo">DIGITAL</span>
+          </div>
+          <p class="ficha-catalografica__titulo">Introdução à Fotossíntese</p>
+          <dl class="ficha-catalografica__linhas">
+            <div><dt>Disciplina</dt><dd>Ciências</dd></div>
+            <div><dt>Série</dt><dd>7º ano</dd></div>
+            <div><dt>Tipo</dt><dd>PDF</dd></div>
+            <div><dt>Publicado</dt><dd>12/06/2026</dd></div>
+          </dl>
+          <div class="ficha-catalografica__rodape">acervo-digital · registro automático</div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- ===================== RODAPÉ ===================== -->

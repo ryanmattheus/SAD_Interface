@@ -132,6 +132,39 @@ section {
 
 .botao--bloco { width: 100%; }
 
+/*==========================
+  TELAS
+==========================*/
+
+.tela{
+    display:none;
+    min-height:calc(100vh - 170px);
+}
+
+#inicio{
+    display:block;
+}
+
+.tela:target{
+    display:block;
+}
+
+.tela:target ~ #inicio{
+    display:none;
+}
+#login:target,
+#cadastro:target,
+#upload-material:target{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:calc(100vh - 170px);
+}
+
 /* ---------- 3. Cabeçalho e menu ---------- */
 .cabecalho {
   position: sticky;
@@ -251,9 +284,10 @@ section {
 
 /* ---------- 5. Formulários ---------- */
 .painel-login, .cadastro-usuario, .upload-material {
-  display: flex;
-  justify-content: center;
+
+    width:100%;
 }
+
 
 .cartao-formulario {
   background: var(--cor-superficie);
