@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAD — Sistema de Acervo Digital de Materiais Didáticos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== CABEÇALHO ===================== -->
+<header class="cabecalho">
+  <div class="cabecalho__conteudo">
+    <div class="cabecalho__marca">
+      <img src="images/logo.png" alt="Logotipo do SAD" class="cabecalho__logo">
+      <div class="cabecalho__textos">
+        <span class="cabecalho__nome">SAD <span class="cabecalho__nome-extenso">· Sistema de Acervo Digital</span></span>
+        <span class="cabecalho__instituicao">Colégio Estadual Novo Horizonte — Núcleo de Apoio ao Ensino</span>
+      </div>
+    </div>
+
+    <!-- ===================== MENU DE NAVEGAÇÃO ===================== -->
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#login">Login</a>
+      <a href="#cadastro">Cadastro</a>
+      <a href="#painel-professor">Área do Professor</a>
+      <a href="#painel-aluno">Área do Aluno</a>
+      <a href="#materiais-por-serie">Por Série</a>
+      <a href="#materiais-por-disciplina">Por Disciplina</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== INÍCIO ===================== -->
+  <section id="inicio" class="inicio">
+    <div class="inicio__grade">
+      <div class="inicio__coluna-texto">
+        <p class="eyebrow">Acervo Digital de Materiais Didáticos</p>
+        <h1>Todo material de aula, catalogado e ao alcance de um clique.</h1>
+        <p class="inicio__lead">
+          O SAD centraliza PDFs, vídeos e slides enviados pelos professores e organiza
+          tudo por série e por disciplina — para que o acesso ao conteúdo pedagógico
+          continue simples mesmo com conectividade limitada.
+        </p>
+        <div class="inicio__acoes">
+          <a href="#login" class="botao botao--primario">Entrar</a>
+          <a href="#cadastro" class="botao botao--secundario">Criar cadastro</a>
+        </div>
+        <ul class="inicio__metricas">
+          <li><strong>12</strong><span>materiais no acervo</span></li>
+          <li><strong>3</strong><span>séries atendidas</span></li>
+          <li><strong>3</strong><span>disciplinas ativas</span></li>
+        </ul>
+      </div>
+
+      <div class="inicio__coluna-visual" aria-hidden="true">
+        <div class="ficha-catalografica">
+          <div class="ficha-catalografica__topo">
+            <span>FICHA Nº 0142</span>
+            <span class="ficha-catalografica__carimbo">DIGITAL</span>
+          </div>
+          <p class="ficha-catalografica__titulo">Introdução à Fotossíntese</p>
+          <dl class="ficha-catalografica__linhas">
+            <div><dt>Disciplina</dt><dd>Ciências</dd></div>
+            <div><dt>Série</dt><dd>7º ano</dd></div>
+            <div><dt>Tipo</dt><dd>PDF</dd></div>
+            <div><dt>Publicado</dt><dd>12/06/2026</dd></div>
+          </dl>
+          <div class="ficha-catalografica__rodape">acervo-digital · registro automático</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOGIN ===================== -->
+  <section id="login" class="painel-login">
+    <div class="cartao-formulario">
+      <h2>Login</h2>
+      <p class="cartao-formulario__descricao">Acesse com sua conta de professor ou aluno.</p>
+      <form>
+        <div class="campo">
+          <label for="login-email">E-mail ou usuário</label>
+          <input type="text" id="login-email" name="login-email" placeholder="nome@escola.edu.br">
+        </div>
+        <div class="campo">
+          <label for="login-senha">Senha</label>
+          <input type="password" id="login-senha" name="login-senha" placeholder="Digite sua senha">
+        </div>
+        <fieldset class="campo campo--perfil">
+          <legend>Perfil</legend>
+          <label class="opcao"><input type="radio" name="perfil-login" checked> Professor</label>
+          <label class="opcao"><input type="radio" name="perfil-login"> Aluno</label>
+        </fieldset>
+        <button type="button" class="botao botao--primario botao--bloco">Entrar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== CADASTRO ===================== -->
+  <section id="cadastro" class="cadastro-usuario">
+    <div class="cartao-formulario cartao-formulario--largo">
+      <h2>Cadastro</h2>
+      <p class="cartao-formulario__descricao">Crie sua conta para acessar o acervo.</p>
+      <form>
+        <h3 class="grupo-formulario__titulo">Dados Pessoais</h3>
+        <div class="grupo-formulario">
+          <div class="campo">
+            <label for="cad-nome">Nome completo</label>
+            <input type="text" id="cad-nome" name="cad-nome" placeholder="Seu nome completo">
+          </div>
+          <div class="campo">
+            <label for="cad-email">E-mail</label>
+            <input type="email" id="cad-email" name="cad-email" placeholder="nome@escola.edu.br">
+          </div>
+          <div class="campo">
+            <label for="cad-senha">Senha</label>
+            <input type="password" id="cad-senha" name="cad-senha" placeholder="Crie uma senha">
+          </div>
+        </div>
+
+        <h3 class="grupo-formulario__titulo">Dados Acadêmicos</h3>
+        <div class="grupo-formulario">
+          <fieldset class="campo campo--perfil">
+            <legend>Perfil</legend>
+            <label class="opcao"><input type="radio" name="perfil-cadastro" checked> Professor</label>
+            <label class="opcao"><input type="radio" name="perfil-cadastro"> Aluno</label>
+          </fieldset>
+          <div class="campo">
+            <label for="cad-disciplina">Disciplina <span class="campo__nota">(se professor)</span></label>
+            <select id="cad-disciplina" name="cad-disciplina">
+              <option>Matemática</option>
+              <option>Português</option>
+              <option>Ciências</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="cad-serie">Série/Turma <span class="campo__nota">(se aluno)</span></label>
+            <select id="cad-serie" name="cad-serie">
+              <option>6º ano</option>
+              <option>7º ano</option>
+              <option>8º ano</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" class="botao botao--primario botao--bloco">Cadastrar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== PAINEL DO PROFESSOR ===================== -->
+  <section id="painel-professor" class="painel-professor">
+    <div class="secao__cabecalho">
+      <div>
+        <p class="eyebrow">Área do Professor</p>
+        <h2>Materiais enviados</h2>
+      </div>
+      <a href="#upload-material" class="botao botao--primario">Enviar novo material</a>
+    </div>
+
+    <div class="tabela-wrapper">
+      <table class="tabela-materiais">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Disciplina</th>
+            <th>Série</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Introdução à Fotossíntese</td>
+            <td>Ciências</td>
+            <td>7º ano</td>
+            <td>12/06/2026</td>
+          </tr>
+          <tr>
+            <td>Equações do 2º Grau</td>
+            <td>Matemática</td>
+            <td>9º ano</td>
+            <td>05/06/2026</td>
+          </tr>
+          <tr>
+            <td>Figuras de Linguagem</td>
+            <td>Português</td>
+            <td>8º ano</td>
+            <td>01/06/2026</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== UPLOAD DE MATERIAL ===================== -->
+  <section id="upload-material" class="upload-material">
+    <div class="cartao-formulario cartao-formulario--largo">
+      <h2>Upload de Material</h2>
+      <p class="cartao-formulario__descricao">Preencha os dados do novo material didático.</p>
+      <form>
+        <div class="grupo-formulario">
+          <div class="campo campo--completo">
+            <label for="up-titulo">Título do material</label>
+            <input type="text" id="up-titulo" name="up-titulo" placeholder="Ex.: Introdução à Fotossíntese">
+          </div>
+          <div class="campo">
+            <label for="up-disciplina">Disciplina</label>
+            <select id="up-disciplina" name="up-disciplina">
+              <option>Matemática</option>
+              <option>Português</option>
+              <option>Ciências</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="up-serie">Série/Turma de destino</label>
+            <select id="up-serie" name="up-serie">
+              <option>6º ano</option>
+              <option>7º ano</option>
+              <option>8º ano</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="up-tipo">Tipo de material</label>
+            <select id="up-tipo" name="up-tipo">
+              <option>PDF</option>
+              <option>Vídeo</option>
+              <option>Slide</option>
+            </select>
+          </div>
+          <div class="campo campo--completo">
+            <label for="up-descricao">Descrição breve</label>
+            <textarea id="up-descricao" name="up-descricao" rows="3" placeholder="Resumo do conteúdo do material"></textarea>
+          </div>
+          <div class="campo campo--completo">
+            <label for="up-arquivo">Arquivo</label>
+            <input type="file" id="up-arquivo" name="up-arquivo">
+          </div>
+        </div>
+        <button type="button" class="botao botao--primario botao--bloco">Enviar Material</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== PAINEL DO ALUNO ===================== -->
+  <section id="painel-aluno" class="painel-aluno">
+    <div class="secao__cabecalho">
+      <div>
+        <p class="eyebrow">Área do Aluno</p>
+        <h2>Materiais disponíveis</h2>
+      </div>
+    </div>
+
+    <div class="grade-cartoes">
+      <article class="cartao-material cartao-material--pdf">
+        <div class="cartao-material__topo">PDF</div>
+        <h3>Introdução à Fotossíntese</h3>
+        <p class="cartao-material__meta">Ciências · 7º ano</p>
+        <p class="cartao-material__data">12/06/2026</p>
+      </article>
+      <article class="cartao-material cartao-material--slide">
+        <div class="cartao-material__topo">Slide</div>
+        <h3>Equações do 2º Grau</h3>
+        <p class="cartao-material__meta">Matemática · 9º ano</p>
+        <p class="cartao-material__data">05/06/2026</p>
+      </article>
+      <article class="cartao-material cartao-material--video">
+        <div class="cartao-material__topo">Vídeo</div>
+        <h3>Figuras de Linguagem</h3>
+        <p class="cartao-material__meta">Português · 8º ano</p>
+        <p class="cartao-material__data">01/06/2026</p>
+      </article>
+      <article class="cartao-material cartao-material--pdf">
+        <div class="cartao-material__topo">PDF</div>
+        <h3>Frações e Números Decimais</h3>
+        <p class="cartao-material__meta">Matemática · 6º ano</p>
+        <p class="cartao-material__data">28/05/2026</p>
+      </article>
+      <article class="cartao-material cartao-material--video">
+        <div class="cartao-material__topo">Vídeo</div>
+        <h3>O Ciclo da Água</h3>
+        <p class="cartao-material__meta">Ciências · 6º ano</p>
+        <p class="cartao-material__data">22/05/2026</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== MATERIAIS POR SÉRIE ===================== -->
+  <section id="materiais-por-serie" class="painel-series">
+    <p class="eyebrow">Organização do Acervo</p>
+    <h2>Materiais por Série</h2>
+
+    <div class="grupo-serie">
+      <h3 class="grupo-serie__titulo">6º ano</h3>
+      <div class="grade-cartoes">
+        <article class="cartao-material cartao-material--pdf">
+          <div class="cartao-material__topo">PDF</div>
+          <h3>Frações e Números Decimais</h3>
+          <p class="cartao-material__meta">Matemática · 6º ano</p>
+          <p class="cartao-material__data">28/05/2026</p>
+        </article>
+        <article class="cartao-material cartao-material--video">
+          <div class="cartao-material__topo">Vídeo</div>
+          <h3>O Ciclo da Água</h3>
+          <p class="cartao-material__meta">Ciências · 6º ano</p>
+          <p class="cartao-material__data">22/05/2026</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="grupo-serie">
+      <h3 class="grupo-serie__titulo">7º ano</h3>
+      <div class="grade-cartoes">
+        <article class="cartao-material cartao-material--pdf">
+          <div class="cartao-material__topo">PDF</div>
+          <h3>Introdução à Fotossíntese</h3>
+          <p class="cartao-material__meta">Ciências · 7º ano</p>
+          <p class="cartao-material__data">12/06/2026</p>
+        </article>
+        <article class="cartao-material cartao-material--slide">
+          <div class="cartao-material__topo">Slide</div>
+          <h3>Substantivos e Adjetivos</h3>
+          <p class="cartao-material__meta">Português · 7º ano</p>
+          <p class="cartao-material__data">18/05/2026</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="grupo-serie">
+      <h3 class="grupo-serie__titulo">8º ano</h3>
+      <div class="grade-cartoes">
+        <article class="cartao-material cartao-material--video">
+          <div class="cartao-material__topo">Vídeo</div>
+          <h3>Figuras de Linguagem</h3>
+          <p class="cartao-material__meta">Português · 8º ano</p>
+          <p class="cartao-material__data">01/06/2026</p>
+        </article>
+        <article class="cartao-material cartao-material--slide">
+          <div class="cartao-material__topo">Slide</div>
+          <h3>Tabela Periódica na Prática</h3>
+          <p class="cartao-material__meta">Ciências · 8º ano</p>
+          <p class="cartao-material__data">15/05/2026</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MATERIAIS POR DISCIPLINA ===================== -->
+  <section id="materiais-por-disciplina" class="painel-disciplinas">
+    <p class="eyebrow">Organização do Acervo</p>
+    <h2>Materiais por Disciplina</h2>
+
+    <div class="grupo-disciplina">
+      <h3 class="grupo-disciplina__titulo">Matemática</h3>
+      <div class="grade-cartoes">
+        <article class="cartao-material cartao-material--slide">
+          <div class="cartao-material__topo">Slide</div>
+          <h3>Equações do 2º Grau</h3>
+          <p class="cartao-material__meta">Matemática · 9º ano</p>
+          <p class="cartao-material__data">05/06/2026</p>
+        </article>
+        <article class="cartao-material cartao-material--pdf">
+          <div class="cartao-material__topo">PDF</div>
+          <h3>Frações e Números Decimais</h3>
+          <p class="cartao-material__meta">Matemática · 6º ano</p>
+          <p class="cartao-material__data">28/05/2026</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="grupo-disciplina">
+      <h3 class="grupo-disciplina__titulo">Português</h3>
+      <div class="grade-cartoes">
+        <article class="cartao-material cartao-material--video">
+          <div class="cartao-material__topo">Vídeo</div>
+          <h3>Figuras de Linguagem</h3>
+          <p class="cartao-material__meta">Português · 8º ano</p>
+          <p class="cartao-material__data">01/06/2026</p>
+        </article>
+        <article class="cartao-material cartao-material--slide">
+          <div class="cartao-material__topo">Slide</div>
+          <h3>Substantivos e Adjetivos</h3>
+          <p class="cartao-material__meta">Português · 7º ano</p>
+          <p class="cartao-material__data">18/05/2026</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="grupo-disciplina">
+      <h3 class="grupo-disciplina__titulo">Ciências</h3>
+      <div class="grade-cartoes">
+        <article class="cartao-material cartao-material--pdf">
+          <div class="cartao-material__topo">PDF</div>
+          <h3>Introdução à Fotossíntese</h3>
+          <p class="cartao-material__meta">Ciências · 7º ano</p>
+          <p class="cartao-material__data">12/06/2026</p>
+        </article>
+        <article class="cartao-material cartao-material--video">
+          <div class="cartao-material__topo">Vídeo</div>
+          <h3>O Ciclo da Água</h3>
+          <p class="cartao-material__meta">Ciências · 6º ano</p>
+          <p class="cartao-material__data">22/05/2026</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== RODAPÉ ===================== -->
+<footer class="rodape">
+  <div class="rodape__conteudo">
+    <div class="rodape__marca">
+      <img src="images/logo.png" alt="Logotipo do SAD" class="rodape__logo">
+      <span>SAD · Sistema de Acervo Digital</span>
+    </div>
+    <ul class="rodape__info">
+      <li>Colégio Estadual Novo Horizonte</li>
+      <li>Rua das Acácias, 245 — Campina Grande/PB</li>
+      <li>(83) 3341-0198</li>
+      <li>contato@sad-acervo.edu.br</li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

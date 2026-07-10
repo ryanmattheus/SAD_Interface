@@ -1,0 +1,426 @@
+/* =========================================================
+   SAD — Sistema de Acervo Digital
+   Folha de estilos principal
+   Índice:
+   1. Tokens (cores, tipografia, espaçamentos)
+   2. Reset e base
+   3. Cabeçalho e menu
+   4. Início (hero + ficha catalográfica)
+   5. Formulários (login, cadastro, upload)
+   6. Painel do professor (tabela)
+   7. Cartões de material
+   8. Agrupamentos por série / disciplina
+   9. Rodapé
+   10. Responsividade
+   ========================================================= */
+
+/* ---------- 1. Tokens ---------- */
+:root {
+  --cor-primaria: #1b3b8c;
+  --cor-primaria-escura: #122a66;
+  --cor-secundaria: #1fa6e0;
+  --cor-destaque: #f2a93b;
+  --cor-fundo: #f5f7fb;
+  --cor-superficie: #ffffff;
+  --cor-texto: #16213e;
+  --cor-texto-suave: #566089;
+  --cor-borda: #dbe2f1;
+
+  --fonte-display: "Sora", "Inter", sans-serif;
+  --fonte-corpo: "Inter", sans-serif;
+  --fonte-mono: "IBM Plex Mono", monospace;
+
+  --espaco-1: 0.5rem;
+  --espaco-2: 1rem;
+  --espaco-3: 1.5rem;
+  --espaco-4: 2.5rem;
+  --espaco-5: 4rem;
+
+  --raio: 12px;
+  --sombra: 0 12px 30px -18px rgba(22, 33, 62, 0.35);
+}
+
+/* ---------- 2. Reset e base ---------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte-corpo);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+}
+
+h1, h2, h3 {
+  font-family: var(--fonte-display);
+  color: var(--cor-texto);
+  margin: 0 0 var(--espaco-2);
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2rem, 3.2vw, 2.75rem); font-weight: 800; }
+h2 { font-size: 1.75rem; font-weight: 700; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+
+p { margin: 0 0 var(--espaco-2); color: var(--cor-texto-suave); }
+
+a { color: var(--cor-primaria); }
+
+.eyebrow {
+  font-family: var(--fonte-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  color: var(--cor-secundaria);
+  font-weight: 500;
+  margin: 0 0 var(--espaco-1);
+}
+
+section {
+  padding: var(--espaco-5) var(--espaco-4);
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-family: var(--fonte-corpo);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.botao--primario {
+  background: var(--cor-primaria);
+  color: #fff;
+}
+.botao--primario:hover {
+  background: var(--cor-primaria-escura);
+  box-shadow: 0 8px 20px -8px rgba(27, 59, 140, 0.6);
+}
+.botao--primario:active { transform: scale(0.97); }
+
+.botao--secundario {
+  background: transparent;
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+.botao--secundario:hover { background: rgba(27, 59, 140, 0.08); }
+.botao--secundario:active { transform: scale(0.97); }
+
+.botao--bloco { width: 100%; }
+
+/* ---------- 3. Cabeçalho e menu ---------- */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.cabecalho__conteudo {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: var(--espaco-2) var(--espaco-4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espaco-2);
+}
+
+.cabecalho__marca { display: flex; align-items: center; gap: 0.75rem; }
+.cabecalho__logo { height: 42px; width: auto; }
+.cabecalho__textos { display: flex; flex-direction: column; }
+.cabecalho__nome { font-family: var(--fonte-display); font-weight: 800; font-size: 1.1rem; }
+.cabecalho__nome-extenso { font-weight: 500; color: var(--cor-texto-suave); }
+.cabecalho__instituicao { font-size: 0.8rem; color: var(--cor-texto-suave); }
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.menu a {
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.menu a:hover { background: var(--cor-fundo); color: var(--cor-primaria); }
+.menu a:active { background: var(--cor-borda); }
+
+/* ---------- 4. Início ---------- */
+.inicio__grade {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--espaco-5);
+  align-items: center;
+}
+
+.inicio__lead { max-width: 46ch; }
+
+.inicio__acoes { display: flex; gap: var(--espaco-2); margin: var(--espaco-3) 0; flex-wrap: wrap; }
+
+.inicio__metricas {
+  list-style: none;
+  display: flex;
+  gap: var(--espaco-4);
+  padding: 0;
+  margin: var(--espaco-3) 0 0;
+}
+.inicio__metricas li { display: flex; flex-direction: column; }
+.inicio__metricas strong { font-family: var(--fonte-display); font-size: 1.9rem; color: var(--cor-primaria); }
+.inicio__metricas span { font-size: 0.8rem; color: var(--cor-texto-suave); }
+
+/* Ficha catalográfica: elemento assinatura, inspirado nas antigas
+   fichas de catálogo de biblioteca, "convertidas" para o acervo digital. */
+.ficha-catalografica {
+  background: var(--cor-superficie);
+  border: 1.5px dashed var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--espaco-3);
+  box-shadow: var(--sombra);
+  font-family: var(--fonte-mono);
+  max-width: 360px;
+  margin-inline: auto;
+  transform: rotate(-1.5deg);
+}
+.ficha-catalografica__topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7rem;
+  color: var(--cor-texto-suave);
+  border-bottom: 1px solid var(--cor-borda);
+  padding-bottom: var(--espaco-1);
+  margin-bottom: var(--espaco-2);
+}
+.ficha-catalografica__carimbo {
+  border: 1.5px solid var(--cor-destaque);
+  color: var(--cor-destaque);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  transform: rotate(-8deg);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+.ficha-catalografica__titulo {
+  font-family: var(--fonte-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+}
+.ficha-catalografica__linhas { display: grid; gap: 0.4rem; margin: var(--espaco-2) 0; }
+.ficha-catalografica__linhas div { display: flex; justify-content: space-between; font-size: 0.85rem; }
+.ficha-catalografica__linhas dt { color: var(--cor-texto-suave); }
+.ficha-catalografica__linhas dd { margin: 0; font-weight: 600; }
+.ficha-catalografica__rodape {
+  font-size: 0.7rem;
+  color: var(--cor-texto-suave);
+  border-top: 1px solid var(--cor-borda);
+  padding-top: var(--espaco-1);
+  text-align: center;
+}
+
+/* ---------- 5. Formulários ---------- */
+.painel-login, .cadastro-usuario, .upload-material {
+  display: flex;
+  justify-content: center;
+}
+
+.cartao-formulario {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: var(--espaco-4);
+  width: 100%;
+  max-width: 440px;
+}
+.cartao-formulario--largo { max-width: 640px; }
+.cartao-formulario__descricao { margin-bottom: var(--espaco-3); }
+
+.grupo-formulario__titulo {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cor-secundaria);
+  margin-top: var(--espaco-3);
+}
+.grupo-formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espaco-2) var(--espaco-3);
+  margin-bottom: var(--espaco-2);
+}
+.campo--completo { grid-column: 1 / -1; }
+
+.campo { display: flex; flex-direction: column; gap: 0.35rem; margin-bottom: var(--espaco-2); }
+.campo label { font-size: 0.85rem; font-weight: 600; }
+.campo__nota { font-weight: 400; color: var(--cor-texto-suave); }
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="password"],
+.campo select,
+.campo textarea,
+.campo input[type="file"] {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.8rem;
+  border: 1.5px solid var(--cor-borda);
+  border-radius: 8px;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+  border-color: var(--cor-secundaria);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(31, 166, 224, 0.25);
+}
+
+.campo--perfil { border: none; padding: 0; margin: 0 0 var(--espaco-2); }
+.campo--perfil legend { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; padding: 0; }
+.opcao { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 500; font-size: 0.9rem; margin-right: var(--espaco-2); }
+
+/* ---------- 6. Painel do professor ---------- */
+.secao__cabecalho {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  margin-bottom: var(--espaco-3);
+}
+
+.tabela-wrapper {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  overflow-x: auto;
+  box-shadow: var(--sombra);
+}
+.tabela-materiais { width: 100%; border-collapse: collapse; min-width: 480px; }
+.tabela-materiais th, .tabela-materiais td {
+  text-align: left;
+  padding: 0.9rem var(--espaco-3);
+  font-size: 0.92rem;
+}
+.tabela-materiais thead {
+  background: var(--cor-fundo);
+  font-family: var(--fonte-mono);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--cor-texto-suave);
+}
+.tabela-materiais tbody tr { border-top: 1px solid var(--cor-borda); }
+.tabela-materiais tbody tr:hover { background: var(--cor-fundo); }
+
+/* ---------- 7. Cartões de material ---------- */
+.grade-cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--espaco-3);
+}
+
+.cartao-material {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: var(--espaco-3);
+  box-shadow: var(--sombra);
+  border-top: 6px solid var(--cor-primaria);
+}
+.cartao-material h3 { margin-bottom: 0.25rem; }
+.cartao-material__meta { font-size: 0.85rem; margin-bottom: 0.15rem; }
+.cartao-material__data { font-family: var(--fonte-mono); font-size: 0.78rem; color: var(--cor-texto-suave); margin: 0; }
+
+.cartao-material__topo {
+  display: inline-block;
+  font-family: var(--fonte-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: var(--espaco-2);
+}
+
+.cartao-material--pdf { border-top-color: var(--cor-primaria); }
+.cartao-material--pdf .cartao-material__topo { background: rgba(27, 59, 140, 0.12); color: var(--cor-primaria); }
+
+.cartao-material--video { border-top-color: var(--cor-destaque); }
+.cartao-material--video .cartao-material__topo { background: rgba(242, 169, 59, 0.18); color: #97640f; }
+
+.cartao-material--slide { border-top-color: var(--cor-secundaria); }
+.cartao-material--slide .cartao-material__topo { background: rgba(31, 166, 224, 0.15); color: #0f6f96; }
+
+/* ---------- 8. Agrupamentos por série / disciplina ---------- */
+.grupo-serie, .grupo-disciplina { margin-top: var(--espaco-4); }
+.grupo-serie__titulo, .grupo-disciplina__titulo {
+  display: inline-block;
+  font-size: 1rem;
+  color: var(--cor-primaria);
+  border-bottom: 3px solid var(--cor-destaque);
+  padding-bottom: 0.25rem;
+  margin-bottom: var(--espaco-2);
+}
+
+/* ---------- 9. Rodapé ---------- */
+.rodape { background: var(--cor-primaria-escura); color: #dce4fb; margin-top: var(--espaco-5); }
+.rodape__conteudo {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: var(--espaco-4);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--espaco-3);
+}
+.rodape__marca { display: flex; align-items: center; gap: 0.6rem; font-family: var(--fonte-display); font-weight: 700; }
+.rodape__logo { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
+.rodape__info { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--espaco-3); font-size: 0.85rem; color: #b7c3ea; }
+
+/* ---------- 10. Responsividade ---------- */
+@media (max-width: 900px) {
+  .inicio__grade { grid-template-columns: 1fr; }
+  .inicio__coluna-visual { order: -1; }
+  .grupo-formulario { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  section { padding: var(--espaco-4) var(--espaco-2); }
+  .cabecalho__conteudo { flex-direction: column; align-items: flex-start; }
+  .menu { width: 100%; }
+  .inicio__metricas { gap: var(--espaco-3); flex-wrap: wrap; }
+  .secao__cabecalho { flex-direction: column; align-items: flex-start; }
+}
