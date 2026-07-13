@@ -1,20 +1,4 @@
-/* =========================================================
-   SAD — Sistema de Acervo Digital
-   Folha de estilos principal
-   Índice:
-   1. Tokens (cores, tipografia, espaçamentos)
-   2. Reset e base
-   3. Cabeçalho e menu
-   4. Início (hero + ficha catalográfica)
-   5. Formulários (login, cadastro, upload)
-   6. Painel do professor (tabela)
-   7. Cartões de material
-   8. Agrupamentos por série / disciplina
-   9. Rodapé
-   10. Responsividade
-   ========================================================= */
-
-/* ---------- 1. Tokens ---------- */
+/* ---------- Tokens ---------- */
 :root {
   --cor-primaria: #1b3b8c;
   --cor-primaria-escura: #122a66;
@@ -40,7 +24,7 @@
   --sombra: 0 12px 30px -18px rgba(22, 33, 62, 0.35);
 }
 
-/* ---------- 2. Reset e base ---------- */
+/* ---------- Reset e base ---------- */
 * { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
@@ -132,9 +116,7 @@ section {
 
 .botao--bloco { width: 100%; }
 
-/*==========================
-  TELAS
-==========================*/
+/* ---------- Telas ---------- */
 
 .tela{
     display:none;
@@ -165,7 +147,7 @@ section {
     min-height:calc(100vh - 170px);
 }
 
-/* ---------- 3. Cabeçalho e menu ---------- */
+/* ---------- Cabeçalho e menu ---------- */
 .cabecalho {
   position: sticky;
   top: 0;
@@ -209,7 +191,7 @@ section {
 .menu a:hover { background: var(--cor-fundo); color: var(--cor-primaria); }
 .menu a:active { background: var(--cor-borda); }
 
-/* ---------- 4. Início ---------- */
+/* ---------- Início ---------- */
 .inicio__grade {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -232,8 +214,7 @@ section {
 .inicio__metricas strong { font-family: var(--fonte-display); font-size: 1.9rem; color: var(--cor-primaria); }
 .inicio__metricas span { font-size: 0.8rem; color: var(--cor-texto-suave); }
 
-/* Ficha catalográfica: elemento assinatura, inspirado nas antigas
-   fichas de catálogo de biblioteca, "convertidas" para o acervo digital. */
+/* ---------- Ficha Catalográfica ---------- */
 .ficha-catalografica {
   background: var(--cor-superficie);
   border: 1.5px dashed var(--cor-borda);
@@ -282,7 +263,7 @@ section {
   text-align: center;
 }
 
-/* ---------- 5. Formulários ---------- */
+/* ---------- Formulários ---------- */
 .painel-login, .cadastro-usuario, .upload-material {
 
     width:100%;
@@ -344,7 +325,7 @@ section {
 .campo--perfil legend { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; padding: 0; }
 .opcao { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 500; font-size: 0.9rem; margin-right: var(--espaco-2); }
 
-/* ---------- 6. Painel do professor ---------- */
+/* ---------- Painel do professor ---------- */
 .secao__cabecalho {
   display: flex;
   align-items: flex-end;
@@ -378,7 +359,7 @@ section {
 .tabela-materiais tbody tr { border-top: 1px solid var(--cor-borda); }
 .tabela-materiais tbody tr:hover { background: var(--cor-fundo); }
 
-/* ---------- 7. Cartões de material ---------- */
+/* ---------- Cartões de material ---------- */
 .grade-cartoes {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -418,7 +399,7 @@ section {
 .cartao-material--slide { border-top-color: var(--cor-secundaria); }
 .cartao-material--slide .cartao-material__topo { background: rgba(31, 166, 224, 0.15); color: #0f6f96; }
 
-/* ---------- 8. Agrupamentos por série / disciplina ---------- */
+/* ---------- Agrupamentos por série / disciplina ---------- */
 .grupo-serie, .grupo-disciplina { margin-top: var(--espaco-4); }
 .grupo-serie__titulo, .grupo-disciplina__titulo {
   display: inline-block;
@@ -429,7 +410,7 @@ section {
   margin-bottom: var(--espaco-2);
 }
 
-/* ---------- 9. Rodapé ---------- */
+/* ---------- Rodapé ---------- */
 .rodape { background: var(--cor-primaria-escura); color: #dce4fb; margin-top: var(--espaco-5); }
 .rodape__conteudo {
   max-width: 1180px;
@@ -444,7 +425,7 @@ section {
 .rodape__logo { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
 .rodape__info { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: var(--espaco-3); font-size: 0.85rem; color: #b7c3ea; }
 
-/* ---------- 10. Responsividade ---------- */
+/* ---------- Responsividade ---------- */
 @media (max-width: 900px) {
   .inicio__grade { grid-template-columns: 1fr; }
   .inicio__coluna-visual { order: -1; }
