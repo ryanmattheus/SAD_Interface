@@ -1,12 +1,3 @@
-/* =========================================================
-   PRINCIPAL — SAD (Sistema de Acervo Digital)
-   Arquivo responsável por importar os módulos e demonstrar
-   o funcionamento das estruturas de dados e funções da
-   Fase 2, exclusivamente via console.
-
-   IMPORTANTE: nenhuma linha deste arquivo manipula o DOM.
-   Todo o processamento ocorre sobre vetores em memória.
-   ========================================================= */
 
 import {
   usuarios,
@@ -55,9 +46,6 @@ import {
   contarAvisos
 } from "./avisos.js";
 
-/* ---------------------------------------------------------
-   DEMONSTRAÇÃO — USUÁRIOS
-   --------------------------------------------------------- */
 console.log("===== USUÁRIOS =====");
 listarUsuarios();
 
@@ -78,9 +66,6 @@ contarUsuarios();
 excluirUsuario(1);
 listarUsuarios();
 
-/* ---------------------------------------------------------
-   DEMONSTRAÇÃO — MATERIAIS
-   --------------------------------------------------------- */
 console.log("===== MATERIAIS =====");
 listarMateriais();
 
@@ -108,9 +93,7 @@ listarMateriaisPorDisciplina("Matemática");
 excluirMaterial(2);
 listarMateriais();
 
-/* ---------------------------------------------------------
-   DEMONSTRAÇÃO — DISCIPLINAS
-   --------------------------------------------------------- */
+
 console.log("===== DISCIPLINAS =====");
 listarDisciplinas();
 
@@ -125,9 +108,6 @@ contarDisciplinas();
 excluirDisciplina(3);
 listarDisciplinas();
 
-/* ---------------------------------------------------------
-   DEMONSTRAÇÃO — SÉRIES / TURMAS
-   --------------------------------------------------------- */
 console.log("===== SÉRIES / TURMAS =====");
 listarSeries();
 
@@ -142,9 +122,6 @@ contarSeries();
 excluirSerie(3);
 listarSeries();
 
-/* ---------------------------------------------------------
-   DEMONSTRAÇÃO — AVISOS
-   --------------------------------------------------------- */
 console.log("===== AVISOS =====");
 listarAvisos();
 
