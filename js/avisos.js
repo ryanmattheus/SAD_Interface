@@ -1,15 +1,3 @@
-/* =========================================================
-   AVISOS — SAD (Sistema de Acervo Digital)
-   Módulo responsável pelo cadastro e gerenciamento
-   dos avisos/comunicados enviados aos professores e alunos.
-
-   Cada aviso possui:
-   - titulo
-   - data
-   - descricao
-   ========================================================= */
-
-// Vetor que armazena os avisos cadastrados (em memória)
 const avisos = [
   {
     titulo: "Manutenção programada do sistema",
@@ -23,9 +11,6 @@ const avisos = [
   }
 ];
 
-/**
- * Cadastra um novo aviso no vetor de avisos.
- */
 function cadastrarAviso(titulo, data, descricao) {
   const novoAviso = { titulo, data, descricao };
   avisos.push(novoAviso);
@@ -39,9 +24,6 @@ function listarAvisos() {
   console.table(avisos);
 }
 
-/**
- * Edita um aviso existente a partir do índice no vetor.
- */
 function editarAviso(indice, novosDados) {
   if (indice < 0 || indice >= avisos.length) {
     console.log("Aviso não encontrado.");
@@ -52,9 +34,6 @@ function editarAviso(indice, novosDados) {
   console.log(`Aviso na posição ${indice} atualizado com sucesso.`);
 }
 
-/**
- * Exclui um aviso do vetor a partir do índice.
- */
 function excluirAviso(indice) {
   if (indice < 0 || indice >= avisos.length) {
     console.log("Aviso não encontrado.");
@@ -65,9 +44,6 @@ function excluirAviso(indice) {
   console.log(`Aviso na posição ${indice} removido com sucesso.`);
 }
 
-/**
- * Retorna a quantidade de avisos cadastrados.
- */
 function contarAvisos() {
   console.log(`Total de avisos cadastrados: ${avisos.length}`);
   return avisos.length;
