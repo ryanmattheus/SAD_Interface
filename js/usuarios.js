@@ -1,18 +1,4 @@
-/* =========================================================
-   USUÁRIOS — SAD (Sistema de Acervo Digital)
-   Módulo responsável pelo cadastro e gerenciamento
-   de usuários (professores e alunos).
 
-   Cada usuário possui:
-   - nome
-   - email
-   - senha
-   - perfil        ("professor" ou "aluno")
-   - disciplina    (preenchido apenas se perfil === "professor")
-   - serie         (preenchido apenas se perfil === "aluno")
-   ========================================================= */
-
-// Vetor que armazena os usuários cadastrados (em memória)
 const usuarios = [
   {
     nome: "Ana Beatriz Ferreira",
@@ -55,18 +41,10 @@ function cadastrarUsuario(nome, email, senha, perfil, disciplina = null, serie =
   console.log(`Usuário "${nome}" cadastrado com sucesso.`);
 }
 
-/**
- * Lista todos os usuários cadastrados.
- */
 function listarUsuarios() {
   console.table(usuarios);
 }
 
-/**
- * Edita um usuário existente a partir do índice no vetor.
- * @param {number} indice
- * @param {object} novosDados - objeto com as propriedades a alterar
- */
 function editarUsuario(indice, novosDados) {
   if (indice < 0 || indice >= usuarios.length) {
     console.log("Usuário não encontrado.");
@@ -77,10 +55,6 @@ function editarUsuario(indice, novosDados) {
   console.log(`Usuário na posição ${indice} atualizado com sucesso.`);
 }
 
-/**
- * Exclui um usuário do vetor a partir do índice.
- * @param {number} indice
- */
 function excluirUsuario(indice) {
   if (indice < 0 || indice >= usuarios.length) {
     console.log("Usuário não encontrado.");
@@ -91,10 +65,6 @@ function excluirUsuario(indice) {
   console.log(`Usuário na posição ${indice} removido com sucesso.`);
 }
 
-/**
- * Retorna a quantidade de usuários cadastrados.
- * @returns {number}
- */
 function contarUsuarios() {
   console.log(`Total de usuários cadastrados: ${usuarios.length}`);
   return usuarios.length;
