@@ -1,18 +1,4 @@
-/* =========================================================
-   MATERIAIS — SAD (Sistema de Acervo Digital)
-   Módulo responsável pelo cadastro e gerenciamento
-   dos materiais didáticos enviados pelos professores.
 
-   Cada material possui:
-   - titulo
-   - disciplina
-   - serie
-   - tipo         ("PDF", "Vídeo" ou "Slide")
-   - data
-   - descricao
-   ========================================================= */
-
-// Vetor que armazena os materiais cadastrados (em memória)
 const materiais = [
   {
     titulo: "Introdução à Fotossíntese",
@@ -56,25 +42,16 @@ const materiais = [
   }
 ];
 
-/**
- * Cadastra um novo material no vetor de materiais.
- */
 function cadastrarMaterial(titulo, disciplina, serie, tipo, data, descricao) {
   const novoMaterial = { titulo, disciplina, serie, tipo, data, descricao };
   materiais.push(novoMaterial);
   console.log(`Material "${titulo}" cadastrado com sucesso.`);
 }
 
-/**
- * Lista todos os materiais cadastrados.
- */
 function listarMateriais() {
   console.table(materiais);
 }
 
-/**
- * Edita um material existente a partir do índice no vetor.
- */
 function editarMaterial(indice, novosDados) {
   if (indice < 0 || indice >= materiais.length) {
     console.log("Material não encontrado.");
@@ -85,9 +62,6 @@ function editarMaterial(indice, novosDados) {
   console.log(`Material na posição ${indice} atualizado com sucesso.`);
 }
 
-/**
- * Exclui um material do vetor a partir do índice.
- */
 function excluirMaterial(indice) {
   if (indice < 0 || indice >= materiais.length) {
     console.log("Material não encontrado.");
@@ -98,26 +72,17 @@ function excluirMaterial(indice) {
   console.log(`Material na posição ${indice} removido com sucesso.`);
 }
 
-/**
- * Retorna a quantidade de materiais cadastrados.
- */
 function contarMateriais() {
   console.log(`Total de materiais cadastrados: ${materiais.length}`);
   return materiais.length;
 }
 
-/**
- * Lista materiais filtrando por série.
- */
 function listarMateriaisPorSerie(serie) {
   const filtrados = materiais.filter((material) => material.serie === serie);
   console.table(filtrados);
   return filtrados;
 }
 
-/**
- * Lista materiais filtrando por disciplina.
- */
 function listarMateriaisPorDisciplina(disciplina) {
   const filtrados = materiais.filter((material) => material.disciplina === disciplina);
   console.table(filtrados);
