@@ -17,9 +17,6 @@ function cadastrarAviso(titulo, data, descricao) {
   console.log(`Aviso "${titulo}" cadastrado com sucesso.`);
 }
 
-/**
- * Lista todos os avisos cadastrados.
- */
 function listarAvisos() {
   console.table(avisos);
 }
